@@ -38,8 +38,7 @@
     ./uninstall_activemq.sh /opt/apache/activemq /opt/apache/activemq/amq1 /opt/apache/activemq/amq1/bin/stop_activemq.sh
 ```
 
-
-## Refs
+## Others
 ### OS: BCLinux for Euler V21.10
 https://mirrors.cmecloud.cn
 https://www.openeuler.org/zh/download
