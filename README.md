@@ -3,24 +3,27 @@
     https://alidocs.dingtalk.com/spreadsheetv2/My45rW3Nu0qaY8MN/edit
 
 ## Commands
-* prepare install packages
+* prepare install package of activemq.
 ```
     cd dat/packages
     curl -O https://archive.apache.org/dist/activemq/5.16.6/apache-activemq-5.16.6-bin.tar.gz
 ```
 
-* shell to dev env and run scripts.
+* shell to open-euler and test all scripts.
 ```
+    docker-compose pull
     docker-compose run oe bash
 
     # setup java
     install_jdk8.sh
 
-    # run test code
-    # the media_path must be /packages
-    # the install_dir can be any path, eg. /opt/apache/activemq
-    # the instance_name can be any valid file name
-    # eg.
+    ## About input params:
+    #  * The media_path must be /packages
+    #  * The install_dir can be any path, eg. /opt/apache/activemq
+    #  * The instance_name can be any name
+    #####
+
+    # To test all scripts
     cd activemq_v1
     # install and create the amq1 instance
     ./install_activemq.sh /opt/apache/activemq /packages amq1
