@@ -1,10 +1,51 @@
-# ActiveMQ
+# ActiveMQ manager scripts
+需求：
+    https://alidocs.dingtalk.com/spreadsheetv2/My45rW3Nu0qaY8MN/edit
 
-### 
-* 安装包：5.16.6
+## Commands
+* prepare install packages
+```
+    cd dat/packages
+    curl -O https://archive.apache.org/dist/activemq/5.16.6/apache-activemq-5.16.6-bin.tar.gz
+```
+
+* shell to dev env and run scripts.
+```
+    docker-compose run oe bash
+
+    # setup java
+    install_jdk8.sh
+
+    # run test code
+    # the media_path must be /packages
+    # the install_dir can be any path, eg. /opt/apache/activemq
+    # the instance_name can be any valid file name
+    # eg.
+    cd activemq_v1
+    # install and create the amq1 instance
+    ./install_activemq.sh /opt/apache/activemq /packages amq1
+
+    # start instance amq1
+    ./start_activemq.sh /opt/apache/activemq/amq1/bin/start_activemq.sh
+
+    # stop instance amq1
+    ./stop_activemq.sh /opt/apache/activemq/amq1/bin/stop_activemq.sh
+
+    # delete instance amq1
+    ./delete_activemq.sh /opt/apache/activemq /opt/apache/activemq/amq1 /opt/apache/activemq/amq1/bin/stop_activemq.sh
+
+    # uninstall
+    ./uninstall_activemq.sh /opt/apache/activemq /opt/apache/activemq/amq1 /opt/apache/activemq/amq1/bin/stop_activemq.sh
+```
+
+
+## Refs
+### OS: BCLinux for Euler V21.10
+https://mirrors.cmecloud.cn
+https://www.openeuler.org/zh/download
+[OS Euler V21.10 是 BCLinux for Euler的发行版本，未找到docker镜像，所以使用社区版v21.09代替](https://gitee.com/openeuler/openeuler-docker-images)
+
+### 安装包下载地址
 https://activemq.apache.org/activemq-5016006-release
-
-* OSS env
-http://demo.bessystem.com:32107/business/home/2/#/business/home/2
-DemoUser
-BesSystem@2022
+* 5.16.6
+    https://archive.apache.org/dist/activemq/5.16.6/apache-activemq-5.16.6-bin.tar.gz

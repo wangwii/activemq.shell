@@ -1,0 +1,15 @@
+version: '3'
+services:
+  oe:
+    image: openeuler/openeuler:21.09
+    #image: rex/oe-jdk:latest
+    environment:
+      - TMOUT=0
+    volumes:
+      - ./src:/app
+      - ./dat/packages:/packages
+      - ./dat/workdir:/opt/apache
+
+      - ./bin:/usr/local/sbin
+      - ./conf/openEuler.repo:/etc/yum.repos.d/openEuler.repo
+    working_dir: /app
